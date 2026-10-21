@@ -1,0 +1,28 @@
+
+appId: com.personal.moneytracker
+productName: Money Tracker
+
+directories:
+  output: release
+
+files:
+  - "electron/**/*"
+  - "package.json"
+
+extraResources:
+  - from: ".output"
+    to: "nitro"
+    filter:
+      - "**/*"
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
